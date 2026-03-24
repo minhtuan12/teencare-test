@@ -8,15 +8,15 @@
     "start": "next start"
   },
   "dependencies": {
+    "mongoose": "^9.3.2",
     "next": "16.2.1"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
+    "@types/mongoose": "^5.11.96",
     "@types/node": "^20",
     "@types/react": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.1",
-    "tailwindcss": "^4",
     "typescript": "^5"
   }
 }
