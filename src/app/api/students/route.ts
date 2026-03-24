@@ -13,3 +13,13 @@ export async function POST(request: NextRequest) {
 		return NextResponse.json({ error: err.message }, { status: 400 });
 	}
 }
+
+export async function GET(request: NextRequest) {
+	await dbConnect();
+	try {
+		const students = await Student.find();
+		return NextResponse.json(students, { status: 200 });
+	} catch (err: any) {
+		return NextResponse.json({ error: err.message }, { status: 400 });
+	}
+}

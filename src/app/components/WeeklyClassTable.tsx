@@ -39,6 +39,28 @@ export default function WeeklyClassTable() {
 		}
 	};
 
+	const handleCreateClass = async () => {
+		const newClass = {
+			name: 'New Class',
+			day_of_week: 'Monday',
+			time_slot: '10:00 AM - 11:00 AM',
+			subject: 'Mathematics',
+			teacher_name: 'Mr. Smith',
+		};
+		const res = await fetch('/api/classes', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(newClass),
+		});
+		const data = await res.json();
+		if (res.ok) {
+			setClasses([...classes, data]);
+			setMessage('Class created successfully!');
+		} else {
+			setMessage(data.error || 'Class creation failed');
+		}
+	};
+
 	return (
 		<div>
 			<div className="mb-4">
@@ -50,6 +72,7 @@ export default function WeeklyClassTable() {
 					))}
 				</select>
 			</div>
+			<button className="btn btn-primary" onClick={handleCreateClass}>Create Class</button>
 			{message && <div className="mb-4 text-green-600">{message}</div>}
 			<table className="table w-full">
 				<thead>

@@ -37,7 +37,7 @@ A mini web app for managing students, parents, classes, and subscriptions. Built
 
 1. Copy `.env.example` to `.env` and fill in values
 2. Run: `docker-compose up --build`
-3. App runs at `http://localhost:3000`
+3. App runs at `http://localhost:4000`
 
 ## Example Seed Data
 
@@ -63,7 +63,7 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:4000](http://localhost:4000) with your browser to see the result.
 
 You can start editing the page by modifying `app/route.ts`. The page auto-updates as you edit the file.
 
